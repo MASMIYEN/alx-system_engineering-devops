@@ -7,13 +7,16 @@
 
 ## # How to use SFTP Commands to Copy Files to/from a Server
 
-1-In your local machine, where you uploaded your files, copy the path for the 3 screenshots, we'll need it to step further
+1- In your local machine, where you uploaded your files, copy the path for the 3 screenshots, we'll need it to step further
+
 2- Open your sandbox fia SFTP (secure file transfer protocol) 
-	a - copy the SFTP provided by your intranet account, paste it in your terminal, do the same with password
+
+3- Copy the SFTP provided by your intranet account, paste it in your terminal, do the same with password
 		![Untitled.png](https://github.com/MASMIYEN/alx-system_engineering-devops/blob/master/command_line_for_the_win/tutorial/Untitled.png?raw=true)
-	b - Then you ll be connected to your sandbox via SFTP, so we ll be able to transfer files to our server(sandbox)
+NOTE: You ll be connected to your sandbox via SFTP, so we ll be able to transfer files to our server(sandbox)
 		![Untitled1.png](https://github.com/MASMIYEN/alx-system_engineering-devops/blob/master/command_line_for_the_win/tutorial/Untitled1.png?raw=true)
-	c - now lets access to the directory where we're supposed to transfer our files using **cd** command for in this project it's :
+ 
+ Now lets access to the directory where we're supposed to transfer our files using **cd** command for in this project it's :
    
 
      /root/alx-system_engineering-devops/command_line_for_the_win/
