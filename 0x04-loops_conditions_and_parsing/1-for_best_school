@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-# print "Best school" 10 times
+# This script is displaying "Best School" 10 times
 
 s="Best School"
 for (( i=0; i<10; i++))
