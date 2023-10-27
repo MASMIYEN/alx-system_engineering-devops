@@ -1,1 +1,9 @@
 #!/usr/bin/env bash
+# This script displays the content of /etc/passwd using while loop + IFS
+
+IFS=:
+while IFS=':' read -r username password uid gid gecos home command
+do
+	echo "The user $username is part of the $gid gang, lives in $home and rides $command. $uid's place is protected by the passcode $password, more info about the user here: $gecos"
+
+done < /etc/passwd
