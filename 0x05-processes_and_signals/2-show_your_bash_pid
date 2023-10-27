@@ -1,1 +1,11 @@
 #!/usr/bin/env bash
+# This script uses 1-list_your_processes command to display lines containing "bash"
+# shellcheck disable=SC2009
+
+while read -r line
+do
+	if [[ $line == *bash* ]]
+	then
+		echo "$line"
+	fi
+done < <(ps -uaxf)
