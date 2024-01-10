@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
-# automate fix but with python3
-sudo python3 -m http.server --directory /usr/share/nginx/html 80 > /dev/null 2>&1 &
+# port in Nginx
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+sudo service nginx restart
+kill -9 "$(cat /var/run/nginx.pid)"
