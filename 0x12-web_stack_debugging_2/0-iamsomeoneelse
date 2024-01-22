@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# bla bla code
+su "$1" -s /bin/bash -c 'whoami'
