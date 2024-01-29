@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ gather data from API """
-import sys
 import requests
+import sys
 
 
 def main():
