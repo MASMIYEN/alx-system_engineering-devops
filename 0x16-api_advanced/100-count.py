@@ -4,11 +4,9 @@
 import requests
 
 
-def sort_histogram(histogram=None):
+def sort_histogram(histogram={}):
     """Sorts and prints the given histogram.
     """
-    if histogram is None:
-        histogram = {}
     histogram = list(filter(lambda kv: kv[1], histogram))
     histogram_dict = {}
     for item in histogram:
@@ -56,7 +54,7 @@ def count_words(subreddit, word_list, histogram=[], n=0, after=None):
             sort,
             limit,
             n,
-            after or ''
+            after if after else ''
         ),
         headers=api_headers,
         allow_redirects=False
