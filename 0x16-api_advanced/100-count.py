@@ -16,7 +16,8 @@ def sort_histogram(histogram={}):
     histogram = list(histogram_dict.items())
     histogram.sort(key=lambda kv: kv[0], reverse=False)
     histogram.sort(key=lambda kv: kv[1], reverse=True)
-    res_str = "\n".join(list(map(lambda kv: "{}: {}".format(kv[0], kv[1]), histogram)))
+    res_str = "\n".join(
+        list(map(lambda kv: "{}: {}".format(kv[0], kv[1]), histogram)))
     if res_str:
         print(res_str)
 
@@ -59,14 +60,20 @@ def count_words(subreddit, word_list, histogram=[], n=0, after=None):
                     kv[0],
                     kv[1]
                     + sum(
-                        list(map(lambda txt: txt.lower().split().count(kv[0]), titles))
+                        list(
+                            map(lambda txt: txt.lower().split().count(kv[0]), titles))
                     ),
                 ),
                 histogram,
             )
         )
         if len(posts) >= limit and data["after"]:
-            count_words(subreddit, word_list, histogram, n + len(posts), data["after"])
+            count_words(
+                subreddit,
+                word_list,
+                histogram,
+                n + len(posts),
+                data["after"])
         else:
             sort_histogram(histogram)
     else:
