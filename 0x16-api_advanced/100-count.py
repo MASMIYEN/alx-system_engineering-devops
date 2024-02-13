@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""A module containing functions for working with the Reddit API.
-"""
+'''A module containing functions for working with the Reddit API.
+'''
 import requests
 
 
 def sort_histogram(histogram={}):
-    """Sorts and prints the given histogram.
-    """
+    '''Sorts and prints the given histogram.
+    '''
     histogram = list(filter(lambda kv: kv[1], histogram))
     histogram_dict = {}
     for item in histogram:
@@ -32,9 +32,9 @@ def sort_histogram(histogram={}):
 
 
 def count_words(subreddit, word_list, histogram=[], n=0, after=None):
-    """Counts the number of times each word in a given wordlist
+    '''Counts the number of times each word in a given wordlist
     occurs in a given subreddit.
-    """
+    '''
     api_headers = {
         'Accept': 'application/json',
         'User-Agent': ' '.join([
