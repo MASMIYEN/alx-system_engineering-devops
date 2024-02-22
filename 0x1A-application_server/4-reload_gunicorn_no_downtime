@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# No service interruption
+
+pgrep gunicorn | xargs -I {} kill -HUP {}
