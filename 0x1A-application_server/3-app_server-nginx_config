@@ -1,0 +1,33 @@
+server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /etc/nginx/html;
+    index  index.html index.htm;
+
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+
+    error_page 404 /404.html;
+    location /404 {
+        root /etc/nginx/html;
+        internal;
+    }
+
+    # Add custom header X-Served-By
+    add_header X-Served-By $hostname;
+
+    # Adress IP ass domaine name
+    # server_name 54.87.251.77
+
+    # serve /airbnb-onepage/
+    location = /airbnb-onepage/ {
+        proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
+    }
+
+    # serve /number_odd_or_even/ route
+    location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
+        proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1;
+    }
+}
+
