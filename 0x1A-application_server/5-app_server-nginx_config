@@ -41,7 +41,7 @@ server {
     }
 
     # serve static contents for airBnb_v4
-    location / static {
+    location /static {
             alias /home/ubuntu/AirBnB_clone_v4/web_dynamic/static/;
     }
 }
